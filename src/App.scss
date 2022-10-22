@@ -1,0 +1,66 @@
+:root {
+  /* ------ PALETTE ------ */
+  --blue: #3785CC;
+  --light: #EEEEEF;
+  --dark: #3B3B3B;
+  --gray: #737A82;
+  --opacity_gray: rgba(249, 249, 249, 0.94);
+  --opacity_light_gray: rgba(60, 60, 67, 0.3);
+  --light_gray: #C3C3C5;
+  /* ------ THEME ------ */
+  --window-background: var(--opacity_gray);
+  --button: var(--blue);
+  --trait: var(--light);
+  --subtext-dark: var(--dark);
+  --subtext-gray: var(--gray);
+  --subtext-light: var(--opacity_light_gray);
+  --button-gray: var(--light_gray)
+
+}
+*{
+  font-family: 'Inter', sans-serif;
+}
+
+.app{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 1.6rem;
+}
+.header{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 4.6rem 0;
+  button{
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background-color: transparent;
+    border: 2px solid var(--button);
+    border-radius: 8px;
+    font-size: 1.4rem;
+    color: var(--button);
+    white-space: nowrap;
+    font-weight: 500;
+  }
+}
+.content{
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+
+}
+.add{
+  width: 100%;
+  padding: 1.6rem 0;
+  background-color: var(--button);
+  border-radius: 8px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: white;
+
+}

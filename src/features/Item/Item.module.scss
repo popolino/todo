@@ -1,0 +1,40 @@
+
+.item {
+  border-top: 1px solid var(--trait);
+  padding: 1rem 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  max-width: calc(100vw - 14rem);
+  font-size: 1.7rem;
+  font-weight: 500;
+  line-height: 1.3;
+
+}
+
+.task {
+  max-width: calc(100vw - 14rem);
+  padding-top: 1rem;
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+.task-done{
+  text-decoration: line-through;
+}
+
+.checkbox {
+  margin-right: 2rem;
+  background-color: transparent;
+}
+button{
+  background-color: transparent;
+}

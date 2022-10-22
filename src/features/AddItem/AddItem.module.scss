@@ -1,0 +1,64 @@
+.add-item {
+  position: absolute;
+  top: 30%;
+  background-color: var(--window-background);
+  border-radius: 14px;
+  width: 27rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.8rem 1.6rem;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  color: var(--subtext-gray);
+  padding: 1rem 0;
+}
+
+input {
+  background-color: white;
+  font-size: 1.3rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--subtext-light);
+}
+
+input::placeholder {
+  color: var(--subtext-light);
+}
+
+input:-moz-focusring {
+  color: blue;
+  background-color: blue;
+}
+
+.buttons {
+  width: 100%;
+  border-top: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+  button {
+    width: 100%;
+    padding: 1.2rem 0.8rem;
+    background-color: transparent;
+    font-weight: 500;
+    color: var(--button-gray);
+    font-size: 1.7rem;
+  }
+}
+.save{
+  color: var(--button) !important;
+  border-left: 1px solid white;
+}

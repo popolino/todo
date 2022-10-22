@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import React from "react";
+import "./reset.css";
+import { SvgSelector } from "./components/SvgSelector/SvgSelector";
+import AddItem from "./features/AddItem/AddItem";
+import Item from "./features/Item/Item";
+import { connect } from "react-redux";
+import { removeToDo, toggleToDo } from "./reducers/ToDoListReducer";
 
-function App() {
+const App = ({ todos, onToggleTodo, onRemoveToDo }) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="header">
+        <button>Показывать все задания</button>
+      </div>
+      <div className="content">
+        {todos.map((todo) => (
+          <Item
+            onRemoveTodo={onRemoveToDo}
+            id={todo.id}
+            key={todo.id}
+            title={todo.title}
+            task={todo.task}
+            isDone={todo.isDone}
+            onChange={() => onToggleTodo(todo.id)}
+          />
+        ))}
+      </div>
+      <button className="add">Добавить</button>
+      {/*<AddItem/>*/}
     </div>
   );
-}
+};
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    todos: state.toDoListReducer.todos,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onToggleTodo: (id) => dispatch(toggleToDo(id)),
+    onRemoveToDo: (id) => dispatch(removeToDo(id)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
